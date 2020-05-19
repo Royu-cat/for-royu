@@ -217,7 +217,7 @@
                         height: 650,
                     },
                     footer: {
-                        width: 800,
+                        width: 1200,
                         height: 5,
                         speed: 10,
                     }
@@ -320,7 +320,7 @@
                             $await(Jscex.Async.sleep(1000));
                         }
                     }));
-                /*document.addEventListener('DOMContentLoaded', function () {
+                document.addEventListener('DOMContentLoaded', function () {
                     function audioAutoPlay() {
                         bgm.play();
                         document.addEventListener("WeixinJSBridgeReady", function () {
@@ -328,7 +328,7 @@
                         }, false);
                     }
                     audioAutoPlay();
-                });*/
+                });
                 var runAsync = eval(Jscex.compile("async",
                     function() {
                         $await(seedAnimate());
