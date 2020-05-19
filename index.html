@@ -42,7 +42,48 @@
 
 </head>
 <body>
+<!-- Large modal -->
+<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button>-->
 
+<div id="modal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div id="main">
+                <div id="wrap">
+                    <div id="text">
+                        <div id="code">
+                            <font color="#ff8c00">
+                                <span class="say">呆瓜:</span><br>
+                                <span class="say">此生能与你相遇</span><br>
+                                <span class="say">便是幸运的事情</span><br>
+                                <span class="say">和你在一起很幸福</span><br>
+                                <span class="say">也很开心</span><br>
+                                <span class="say">尽管会有争吵</span><br>
+                                <span class="say">我知道都是我不好</span><br>
+                                <span class="say">希望你原谅我</span><br>
+                                <span class="say">你是我心中唯一的小可爱</span><br>
+                                <span class="say">无人可以代替</span><br>
+                                <span class="say">虽然我是一个木鱼脑袋</span><br>
+                                <span class="say">但是我的心里只有你</span><br>
+                                <span class="say">我爱你</span><br>
+                                <span class="say">呆瓜</span><br>
+                                <span class="say"></span><br>
+                                <span class="say"></span><br>
+                                <span class="say"></span><br>
+                                <span class="say"></span><br>
+                            </font>
+                        </div>
+                    </div>
+                    <div id="clock-box">
+                        <span><font color="#666666">呆瓜，我们在一起已经有</font></span>
+                        <div id="clock"></div>
+                    </div>
+                    <canvas id="canvas" width="1100" height="680"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="container-fluid">
     <div class="row">
@@ -57,7 +98,7 @@
                                             <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
                                     </a>
                                 </li>
-                                <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab" id="cartoon">Love Date</a></li>
+                                <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab" id="cartoon" >Love Date</a></li>
                                 <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">To You</a></li>
                             </ul>
                             <!-- Tab panes -->
@@ -107,39 +148,7 @@
                                 <div role="tabpanel" class="tab-pane" id="profile">
 
                                 </div>
-                                <div id="main">
-                                    <div id="wrap">
-                                        <div id="text">
-                                            <div id="code">
-                                                <font color="#ff8c00">
-                                                    <span class="say">呆瓜:</span><br>
-                                                    <span class="say">此生能与你相遇</span><br>
-                                                    <span class="say">便是幸运的事情</span><br>
-                                                    <span class="say">和你在一起很幸福</span><br>
-                                                    <span class="say">也很开心</span><br>
-                                                    <span class="say">尽管会有争吵</span><br>
-                                                    <span class="say">我知道都是我不好</span><br>
-                                                    <span class="say">希望你原谅我</span><br>
-                                                    <span class="say">你是我心中唯一的小可爱</span><br>
-                                                    <span class="say">无人可以代替</span><br>
-                                                    <span class="say">虽然我是一个木鱼脑袋</span><br>
-                                                    <span class="say">但是我的心里只有你</span><br>
-                                                    <span class="say">我爱你</span><br>
-                                                    <span class="say">呆瓜</span><br>
-                                                    <span class="say"></span><br>
-                                                    <span class="say"></span><br>
-                                                    <span class="say"></span><br>
-                                                    <span class="say"></span><br>
-                                                </font>
-                                            </div>
-                                        </div>
-                                        <div id="clock-box">
-                                            <span><font color="#666666">呆瓜，我们在一起已经有</font></span>
-                                            <div id="clock"></div>
-                                        </div>
-                                        <canvas id="canvas" width="1100" height="680"></canvas>
-                                    </div>
-                                </div>
+
                                 <div role="tabpanel" class="tab-pane" id="messages">
                                     <div class="container">
                                         <h3>To 呆瓜</h3>
@@ -183,7 +192,7 @@
 
         var second = 0;
 
-        var auto_load = true;
+        var auto_load = false;
         var auto_load_delay = 1000;
         (
             function() {
@@ -206,7 +215,7 @@
                         height: 650,
                     },
                     footer: {
-                        width: 1200,
+                        width: 800,
                         height: 5,
                         speed: 10,
                     }
@@ -330,10 +339,11 @@
                 runAsync().start();
             })();
 
-        /*$("#cartoon").click(function () {
-
-
-        })*/
+        $("#cartoon").click(function () {
+            $('#modal').modal({
+                keyboard: false
+            })
+        })
     })
 
     $("#home_btn").click(function () {
