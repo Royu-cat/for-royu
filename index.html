@@ -1,123 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <script type="text/javascript" src="js/jquery-3.5.0.min.js"></script>
-    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+  <meta charset="UTF-8">
+  
+  <!-- META TAGS -->
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Snow</title>
+  <!-- <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="css/fullpage.css" rel="stylesheet" type="text/css">
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <link href="css/custom.css" rel="stylesheet" type="text/css">
+  <!-- <style>
+    * {
+      padding: 0;
+      margin: 0;
+      color: #fff;
+    }
 
-    <script type="text/javascript" src="js/jscex.min.js"></script>
-    <script type="text/javascript" src="js/jscex-parser.js"></script>
-    <script type="text/javascript" src="js/jscex-jit.js"></script>
-    <script type="text/javascript" src="js/jscex-builderbase.min.js"></script>
-    <script type="text/javascript" src="js/jscex-async.min.js"></script>
-    <script type="text/javascript" src="js/jscex-async-powerpack.min.js"></script>
-    <script type="text/javascript" src="js/functions.js" charset="utf-8"></script>
-    <script type="text/javascript" src="js/love.js" charset="utf-8"></script>
-    <link rel="shortcut icon" href="images/love.ico"/>
-    <link rel="bookmark" href="/mages/love.ico"/>
+    body {
+      background-color: #000;
+      font-size: 16px;
+    }
 
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta charset="UTF-8">
-    <title>Love Royu</title>
+    #wrap {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
 
-    <style type="text/css">
-        body{margin:0;padding:0;background:#ffe;font-size:14px;font-family:'微软雅黑','宋体',sans-serif;color:#231F20;overflow:auto}
-        a{color:#000;font-size:14px;}
-        #main{width:100%;}
-        #wrap{position:relative;margin:0 auto;width:1100px;height:680px;margin-top:10px;}
-        #text{width:400px;height:425px;left:60px;top:80px;position:absolute;}
-        #code{display:none;font-size:16px;}
-        #clock-box{position:absolute;left:60px;top:550px;font-size:28px;display:none;}
-        #clock-box a{font-size:28px;text-decoration:none;}
-        #clock{margin-left:48px;}
-        #clock .digit{font-size:64px;}
-        #canvas{margin:0 auto;width:1100px;height:680px;}
-        #error{margin:0 auto;text-align:center;margin-top:60px;display:none;}
-        .hand{cursor:pointer;}
-        .say{margin-left:5px;}
-        .space{margin-right:150px;}
-    </style>
+    button {
+      margin-bottom: 3px !important;
+    }
 
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg)
+      }
+      to {
+        transform: rotate(360deg)
+      }
+    }
+
+    .nav-container .nav-scroll {
+        border-bottom: 2px solid #a4e7fc;
+        display: inline-block;
+        font-size: 0;
+        margin-bottom: 20px;
+        min-width: 100%;
+        padding: 5px 0 0;
+        vertical-align: middle
+    }
+
+
+    .nav-container .nav-scroll .nav-inner .nav-item {
+        display: inline-block;
+        font-size: 0
+    }
+
+    .nav-container .nav-scroll .nav-inner .nav-item a {
+        color: #a4e7fc;
+        display: block;
+        font-size: 20px;
+        font-weight: 300;
+        padding: 10px;
+        white-space: nowrap;
+        position: relative;
+        min-height: 2.75rem
+    }
+
+    .nav-container .nav-scroll .nav-inner .nav-item a:after {
+        content: "";
+        background: #0e97c0;
+        height: 2px;
+        width: 100%;
+        left: 0;
+        position: absolute;
+        bottom: -1px;
+        -webkit-transition: all .25s ease 0s;
+        -o-transition: all .25s ease 0s;
+        transition: all .25s ease 0s;
+        -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+        transform: scale(0)
+    }
+
+    .nav-container .nav-scroll .nav-inner .nav-item.active a, .nav-container .nav-scroll .nav-inner .nav-item a:focus, .nav-container .nav-scroll .nav-inner .nav-item a:hover {
+        color: #0e97c0;
+        text-decoration: none;
+        -webkit-transition: all .25s ease 0s;
+        -o-transition: all .25s ease 0s;
+        transition: all .25s ease 0s
+    }
+
+    .nav-container .nav-scroll .nav-inner .nav-item.active a:after,
+    .nav-container .nav-scroll .nav-inner .nav-item a:focus:after,
+    .nav-container .nav-scroll .nav-inner .nav-item a:hover:after {
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+        -webkit-transition: all .25s ease 0s;
+        -o-transition: all .25s ease 0s;
+        transition: all .25s ease 0s
+    }
+  </style> -->
 </head>
 <body>
-<!-- Large modal -->
-<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button>-->
-
-<div id="modal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-    <div class="modal-dialog modal-lg" role="document">
-        <!--<div class="modal-content">-->
-
-        <!--</div>-->
-    </div>
-</div>
-
-<div class="container-fluid">
-    <div class="row">
-        <ul class="nav nav-tabs">
-            <li role="presentation" class="active">
-                <a href="#">
-                    <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-                </a>
-            </li>
-            <li role="presentation"><a href="love.html">Love Date</a></li>
-            <li role="presentation"><a href="love-royu.html">To You</a></li>
-        </ul>
+  <div class="bg-container snowy">
+    <!-- <nav role="navigation" aria-label="main navigation" class="container nav-container overflowing">
+      <div class="nav-scroll">
+          <ul class="nav-inner">
+              <li ng-repeat="tab in tabNames" class="nav-item" ng-class="{active:tab.name==who}">
+                  <a ng-click="active(tab.name)">Home</a>
+              </li>
+          </ul>
+      </div>
+  </nav> -->
+  <!-- GLASS BALL -->
+	<div class="glass-ball rotate"></div>
+	<!-- TOP LIGHT -->
+	<div class="top-light"></div>
+  <div class="page-content">
+		<div class="fullpage">
+			<!-- HOME SECTION -->
+			<div id="home" class="section active">
+				<!-- TITLE -->
+        <h1 class="snow-text">Royu</h1>
+        <div>
+          <b class="text">Fall in love</b>
         </div>
-    </div>
-</div>
-
-
-<div class="tab-content">
-    <div role="tabpanel" class="tab-pane active" id="home">
-        <div class="container">
-            <div class="jumbotron">
-                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                    <!-- Indicators -->
-                    <ol class="carousel-indicators">
-                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                    </ol>
-
-                    <!-- Wrapper for slides -->
-                    <div class="carousel-inner" role="listbox">
-                        <div class="item active">
-                            <img class="img-responsive img-rounded" src="images/3.jpg" alt="">
-                            <div class="carousel-caption">
-                                (づ￣ ³￣)づ
-                            </div>
-                        </div>
-                        <div class="item">
-                            <img class="img-responsive img-rounded" src="images/2.jpg" alt="">
-                            <div class="carousel-caption">
-                                (。’▽’。)♡
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Controls -->
-                    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <div role="tabpanel" class="tab-pane" id="profile">
-
-    </div>
-
-    <div role="tabpanel" class="tab-pane" id="messages">
-
-    </div>
-</div>
-
+				<!-- COUNTER -->
+				<div class="snow-box">
+					<div class="countdown" data-date="September 01 2019 00:00:00"></div>
+				</div>
+			</div>
+			<!-- INFO SECTION -->
+			<div id="info" class="section">
+				<div class="container">
+					<!-- INFO TEXT -->
+					<!-- <div class="shadow-box">
+						<h2>Our website is coming soon</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas feugiat hendrerit mauris, non porta lectus varius sed. Sed maximus faucibus ullamcorper. Etiam eu varius purus, ac hendrerit orci. Duis iaculis dui bibendum mi accumsan, eget condimentum justo scelerisque. Sed sit amet porta sapien. Donec hendrerit enim at risus gravida vehicula. Curabitur tristique pellentesque dictum. Aenean sed lorem odio. Nunc a eleifend mi, vitae sodales lacus. Vestibulum id lorem mollis, euismod nisi at, dignissim elit.</p>
+					</div> -->
+					<!-- SOCIAL ICONS -->
+					<!-- <ul class="social-icons">
+						<li><a href="#" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+						<li><a href="#" title="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+						<li><a href="#" title="Google+"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+						<li><a href="#" title="Contact"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
+					</ul>
+				</div>
+			</div> -->
+		</div>
+	</div>
+  </div>
 </body>
-</html>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/countdown.min.js"></script>
+<script type="text/javascript" src="js/jquery.fullpage.min.js"></script>
+<script type="text/javascript" src="js/three.canvas.js"></script>
+<script type="text/javascript" src="js/snowy.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+ <!-- <script src="./release/show.js"></script>
+<script>
+  var snow = new $Snow({img: true, stay: true, speed: 1});
+</script> -->
