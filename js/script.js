@@ -30,8 +30,8 @@ $(function()
 					"<div class=\"countdown-box\"><h3 class=\"countdown-number\">" + data.years + "</h3>" + " <h4 class=\"countdown-title\">years</h4></div>" +
 					"<div class=\"countdown-box\"><h3 class=\"countdown-number\">" + data.days + "</h3>" + " <h4 class=\"countdown-title\">days</h4></div>" +
 					"<div class=\"countdown-box\"><h3 class=\"countdown-number\">" + data.hours + "</h3>" + " <h4 class=\"countdown-title\">hours</h4></div>" +
-					"<div class=\"countdown-box\"><h3 class=\"countdown-number\">" + this.leadingZeros(data.min, 2) + "</h3>" + " <h4 class=\"countdown-title\">minutes</h4></div>" +
-					"<div class=\"countdown-box\"><h3 class=\"countdown-number\">" + this.leadingZeros(data.sec, 2) + "</h3>" + " <h4 class=\"countdown-title\">seconds</h4></div>"
+					"<div class=\"countdown-box\"><h3 class=\"countdown-number\">" + this.leadingZeros(data.min, 2) + "</h3>" + " <h5 class=\"countdown-title\">minutes</h5></div>" +
+					"<div class=\"countdown-box\"><h3 class=\"countdown-number\">" + this.leadingZeros(data.sec, 2) + "</h3>" + " <h5 class=\"countdown-title\">seconds</h5></div>"
 				);
 			}
 		});
